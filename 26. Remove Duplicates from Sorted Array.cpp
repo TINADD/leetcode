@@ -1,16 +1,19 @@
-int removeElement(vector<int>& nums, int val) {
-        if(nums.size()<1) return nums.size();
-        int pre_i=0;
-        while(pre_i<nums.size() && nums[pre_i] != val )
-        {
-            ++pre_i;    
-        }
-        for(int i=pre_i+1;i<nums.size();++i)
-        {
-            if(nums[i] != val)
-            {
-                nums[pre_i++] = nums[i];
-            }
-        }
-        return pre_i;
-    }
+int removeDuplicates(vector<int>& nums)
+{
+	if (nums.size() < 2) return nums.size();
+	int pre = nums[0];
+	int pre_p = 1;
+	for (int i = 1; i < nums.size(); ++i)
+	{
+		if (pre == nums[i])
+		{
+			continue;
+		}
+		else {
+			nums[pre_p] = nums[i];
+			pre = nums[i];
+			++pre_p;
+		}
+	}
+	return pre_p;
+}
