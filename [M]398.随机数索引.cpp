@@ -30,8 +30,9 @@ solution.pick(3);
 */
 class Solution {
 public:
-//这里的引用要在构造函数的参数后面进行初始化，不能在构造函数体里面进行初始化
-/*如果换成非引用，vector<int>& temp，可以在函数体内进行初始化，
+/*
+这里的引用要在构造函数的参数后面进行初始化，不能在构造函数体里面进行初始化
+引用必须在创建时被初始化，如果换成非引用，vector<int>& temp，可以在函数体内进行初始化，
 但是内存，时间都会增多，cpp基础知识需要加强*/
     vector<int>& temp; 
     Solution(vector<int>& nums):temp(nums) {
